@@ -1,0 +1,15 @@
+node_modules/
+dist/
+env.d.ts
+*.config.ts
+.editorconfig
+.eslintignore
+.eslintrc
+.eslintrc.*
+.gitignore
+.prettierignore
+.prettierrc
+.prettierrc.*
+tsconfig.json
+vite.config.*
+dts-bundle-generator.config.*

@@ -1,0 +1,41 @@
+{
+    "name": "vite-library-starter",
+    "private": false,
+    "version": "1.0.0",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "main": "./dist/my-library.cjs",
+    "module": "./dist/my-library.mjs",
+    "types": "./dist/my-library.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/my-library.mjs",
+            "require": "./dist/my-library.cjs"
+        }
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -p tsconfig.build.json && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+        "preview": "vite preview",
+        "lint": "eslint .",
+        "format": "prettier -w .",
+        "test": "vitest",
+        "coverage": "vitest run --coverage"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.49.0",
+        "@typescript-eslint/parser": "^5.49.0",
+        "dts-bundle-generator": "^7.1.0",
+        "eslint": "^8.32.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-check-file": "^1.3.1",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-vitest": "^0.0.30",
+        "prettier": "^2.8.3",
+        "typescript": "^4.9.3",
+        "vite": "^4.0.0",
+        "vitest": "^0.28.1"
+    }
+}
