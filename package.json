@@ -19,15 +19,22 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc -p tsconfig.build.json && vite build && dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+        "types": "t4s --in ./src/lib/strapi-src --out ./src/types/generated --prettier ./.prettierrc -D",
         "preview": "vite preview",
         "lint": "eslint .",
         "format": "prettier -w .",
         "test": "vitest",
         "coverage": "vitest run --coverage"
     },
+    "peerDependencies": {
+        "next": ">= 12 <= 13"
+    },
     "devDependencies": {
+        "@oak-digital/types-4-strapi-2": "^0.4.0",
+        "@types/react": "^18.0.27",
         "@typescript-eslint/eslint-plugin": "^5.49.0",
         "@typescript-eslint/parser": "^5.49.0",
+        "@vitejs/plugin-react": "^3.0.1",
         "dts-bundle-generator": "^7.1.0",
         "eslint": "^8.32.0",
         "eslint-config-prettier": "^8.6.0",
@@ -38,5 +45,9 @@
         "typescript": "^4.9.3",
         "vite": "^4.0.0",
         "vitest": "^0.28.1"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
     }
 }

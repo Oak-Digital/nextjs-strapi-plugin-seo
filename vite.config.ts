@@ -1,6 +1,7 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 import packageJson from './package.json';
+import react from '@vitejs/plugin-react';
 
 const getPackageName = () => {
     return packageJson.name.split('/').pop() ?? packageJson.name;
@@ -21,6 +22,9 @@ const fileName = {
 };
 
 export default defineConfig({
+    plugins: [
+        react(),
+    ],
     server: {
         cors: { origin: '*' },
     },

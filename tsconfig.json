@@ -11,11 +11,10 @@
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "noEmit": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
         "noImplicitReturns": true,
         "forceConsistentCasingInFileNames": true,
         "declaration": true,
+        "jsx": "preserve",
         "types": ["vite/client"]
     },
     "include": ["src/**/*"],

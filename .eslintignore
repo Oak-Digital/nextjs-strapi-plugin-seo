@@ -1,5 +1,6 @@
 node_modules/
 dist/
+src/types/generated/
 env.d.ts
 *.config.ts
 .editorconfig
