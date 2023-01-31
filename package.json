@@ -1,7 +1,8 @@
 {
-    "name": "vite-library-starter",
+    "name": "@oak-digital/nextjs-strapi-plugin-seo",
     "private": false,
-    "version": "1.0.0",
+    "license": "MIT",
+    "version": "0.0.1",
     "type": "module",
     "files": [
         "dist"
