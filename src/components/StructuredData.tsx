@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Script from 'next/script';
 import { FC } from 'react';
 
@@ -12,9 +11,7 @@ const StructuredData: FC<StructuredDataProps> = ({ data, key }) => {
     const jsonString = JSON.stringify(data);
     const html = { __html: jsonString };
     return (
-        <Head>
-            <Script type="application/ld+json" dangerouslySetInnerHTML={html} key={key} />
-        </Head>
+        <Script type="application/ld+json" dangerouslySetInnerHTML={html} key={key} />
     );
 };
 
