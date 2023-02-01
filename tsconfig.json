@@ -11,6 +11,7 @@
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "noEmit": true,
+        "outDir": "dist",
         "noImplicitReturns": true,
         "forceConsistentCasingInFileNames": true,
         "declaration": true,
