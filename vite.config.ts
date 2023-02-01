@@ -42,7 +42,7 @@ export default defineConfig({
             fileName: (format) => fileName[format],
         },
         rollupOptions: {
-            external: ['react', 'react-dom', 'styled-components'],
+            external: ['react', 'react-dom', 'next', 'next/head', 'next/script'],
             output: {
                 globals: {
                     react: 'React',
