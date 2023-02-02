@@ -1,17 +1,10 @@
 import Head from 'next/head';
-import { ISharedSeo } from '../types/generated';
 import { FC } from 'react';
 import { getStrapiUrl } from '../lib/url';
 import StructuredData from './StructuredData';
 import MetaSocial from './meta-social/MetaSocial';
 import { FALLBACK_URL } from '../lib/constants';
-
-export const seoPopulateFields = ['metaImage', 'metaSocial'] as const;
-
-export type SeoProps = {
-    seo: ISharedSeo;
-    strapiUrl?: string; // should not include /api
-};
+import { SeoProps } from '../types/Props';
 
 const Seo: FC<SeoProps> = ({ seo, strapiUrl = FALLBACK_URL }) => {
     const meta: { name: string; content: string }[] = [];

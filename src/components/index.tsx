@@ -1,5 +1,2 @@
-export {
-    default as Seo,
-    /* SeoProps, */
-    seoPopulateFields,
-} from './Seo';
+export { default as Seo } from './Seo';
+export { default as MetaSocial } from './meta-social/MetaSocial';
