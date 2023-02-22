@@ -14,15 +14,22 @@ const FacebookMeta: FC<Props> = ({ metaSocial, strapiUrl }) => {
     return (
         <>
             <Head>
-                <meta name="og:title" content={title} />
-                <meta name="og:description" content={description} />
+                {title && <meta name="og:title" content={title} />}
+                {description && <meta name="og:description" content={description} />}
             </Head>
-            {image.data && (
+            {image?.data && (
                 <Head>
                     <meta name="og:image" content={getStrapiUrl(strapiUrl, image.data.attributes.url)} />
-                    <meta name="og:image:width" content={image.data.attributes.width.toString()} />
-                    <meta name="og:image:height" content={image.data.attributes.height.toString()} />
-                    <meta name="og:image:alt" content={image.data.attributes.alternativeText} />
+                    {/* TODO: We should know if the image width and height are known since the media is an image */}
+                    {image.data.attributes.width !== null && (
+                        <meta name="og:image:width" content={image.data.attributes.width.toString()} />
+                    )}
+                    {image.data.attributes.height !== null && (
+                        <meta name="og:image:height" content={image.data.attributes.height.toString()} />
+                    )}
+                    {image.data.attributes.alternativeText && (
+                        <meta name="og:image:alt" content={image.data.attributes.alternativeText} />
+                    )}
                 </Head>
             )}
         </>

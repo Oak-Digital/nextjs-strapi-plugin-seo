@@ -1,8 +1,7 @@
 {
   "collectionName": "components_shared_meta_socials",
   "info": {
-    "displayName": "metaSocial",
-    "icon": "project-diagram"
+    "displayName": "metaSocial"
   },
   "options": {},
   "attributes": {

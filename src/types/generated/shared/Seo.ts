@@ -7,10 +7,10 @@ export type ISharedSeo<Populate extends string | never = never> = RequiredBy<
     {
         id: number;
         __component: 'shared.seo';
-        metaTitle: string;
-        metaDescription: string;
-        metaImage: { data: IMedia };
-        metaSocial?: ISharedMetaSocial[];
+        metaTitle: string | null;
+        metaDescription: string | null;
+        metaImage?: { data: IMedia | null };
+        metaSocial?: ISharedMetaSocial[] | null;
         keywords: string | null;
         metaRobots: string | null;
         structuredData: any;

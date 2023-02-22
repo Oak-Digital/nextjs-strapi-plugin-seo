@@ -13,7 +13,7 @@ const Seo: FC<SeoProps> = ({ seo, strapiUrl = FALLBACK_URL }) => {
 
     if (seo.metaTitle) addMeta('title', seo.metaTitle);
     if (seo.metaDescription) addMeta('description', seo.metaDescription);
-    if (seo.metaImage) {
+    if (seo?.metaImage?.data?.attributes.url) {
         const fullUrl = getStrapiUrl(strapiUrl, seo.metaImage.data.attributes.url);
         addMeta('image', fullUrl);
     }

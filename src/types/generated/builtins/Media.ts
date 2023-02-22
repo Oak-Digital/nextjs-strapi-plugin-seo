@@ -7,14 +7,12 @@ export interface IMedia<Populate extends string | never = never> {
     attributes: RequiredBy<
         {
             formats?: {
-                thumbnail?: IMediaFormat;
-                large?: IMediaFormat;
-                medium?: IMediaFormat;
-                small?: IMediaFormat;
+                thumbnail?: IMediaFormat | null;
+                large?: IMediaFormat | null;
+                medium?: IMediaFormat | null;
+                small?: IMediaFormat | null;
             } | null;
             name: string;
-            alternativeText: string;
-            caption: string;
             hash: string;
             ext: string;
             mime: string;
@@ -22,8 +20,10 @@ export interface IMedia<Populate extends string | never = never> {
             provider: string;
             previewUrl: string | null;
             provider_metadata: string | null;
-            width: number;
-            height: number;
+            alternativeText: string | null;
+            caption: string | null;
+            width: number | null;
+            height: number | null;
             size: number;
         },
         ExtractFlat<Populate>

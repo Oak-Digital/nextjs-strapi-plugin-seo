@@ -55,10 +55,13 @@ const query = qs.stringify({
         }
     }
 })
-fetch(strapiPath, {
-
-    })
 ```
+
+## Testing locally
+
+For testing purposes, there has been added an [`/example`](./example/) directory, where a strapi instance can be started and nextjs to make sure all the seo fields are correctly added.
+
+[Read more](./example/README.md)
 
 ## Publishing
 

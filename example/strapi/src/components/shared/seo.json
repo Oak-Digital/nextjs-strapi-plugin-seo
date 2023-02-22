@@ -1,8 +1,7 @@
 {
   "collectionName": "components_shared_seos",
   "info": {
-    "displayName": "seo",
-    "icon": "search"
+    "displayName": "seo"
   },
   "options": {},
   "attributes": {
