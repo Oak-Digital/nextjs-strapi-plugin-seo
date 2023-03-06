@@ -10,7 +10,7 @@ export type ISharedSeo<Populate extends string | never = never> = RequiredBy<
         metaTitle: string | null;
         metaDescription: string | null;
         metaImage?: { data: IMedia | null };
-        metaSocial?: ISharedMetaSocial[] | null;
+        metaSocial?: ISharedMetaSocial<ExtractNested<Populate, 'metaSocial'>>[];
         keywords: string | null;
         metaRobots: string | null;
         structuredData: any;

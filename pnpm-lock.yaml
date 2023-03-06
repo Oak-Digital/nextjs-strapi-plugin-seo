@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@oak-digital/types-4-strapi-2': ^0.5.1
+  '@oak-digital/types-4-strapi-2': ^0.5.4
   '@types/react': ^18.0.27
   '@typescript-eslint/eslint-plugin': ^5.49.0
   '@typescript-eslint/parser': ^5.49.0
@@ -28,7 +28,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
-  '@oak-digital/types-4-strapi-2': 0.5.1
+  '@oak-digital/types-4-strapi-2': 0.5.4
   '@types/react': 18.0.27
   '@typescript-eslint/eslint-plugin': 5.49.0_iu322prlnwsygkcra5kbpy22si
   '@typescript-eslint/parser': 5.49.0_7uibuqfxkfaozanbtbziikiqje
@@ -705,8 +705,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@oak-digital/types-4-strapi-2/0.5.1:
-    resolution: {integrity: sha512-p15DMF9J5N6nMi8HCajCyE+L+YAmc+LI4Lxj6bmzsH/47oM3RsEmN4HWQMx0BR5nL6WQRx0ba8IMMq/+x3FG8Q==}
+  /@oak-digital/types-4-strapi-2/0.5.4:
+    resolution: {integrity: sha512-4SJ0dJU3jsZnV3AJpK8Who3vwcaIrGPfU4NtjncMIm12GRIE7gy99yiPnF4w1qqzHz6sqJtzjDWKoBBkvHhwpg==}
     hasBin: true
     dependencies:
       change-case: 4.1.2

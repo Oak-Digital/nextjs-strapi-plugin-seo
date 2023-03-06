@@ -1,11 +1,11 @@
 export interface IMediaFormat {
-    name: string | null;
-    hash: string | null;
-    ext: string | null;
-    mime: string | null;
-    url: string | null;
+    name: string;
+    hash: string;
+    ext: string;
+    mime: string;
+    url: string;
     path: string | null;
-    width: number | null;
-    height: number | null;
-    size: number | null;
+    size: number;
+    width: number;
+    height: number;
 }

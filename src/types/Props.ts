@@ -1,4 +1,4 @@
-import { ISharedMetaSocial, ISharedSeo } from "./generated";
+import { ISharedMetaSocial, ISharedSeo } from './generated';
 
 export type SeoProps = {
     seo: ISharedSeo;
