@@ -1,15 +1,14 @@
 import Head from 'next/head';
 import { FC } from 'react';
 import { getStrapiUrl } from '../../lib/url';
-import { ISharedMetaSocial } from '../../types/generated';
+import { MetaSocialProps } from '../../types';
 
-type Props = {
-    metaSocial: ISharedMetaSocial;
-    strapiUrl: string;
-};
+type Props = MetaSocialProps;
 
-const FacebookMeta: FC<Props> = ({ metaSocial, strapiUrl }) => {
+const FacebookMeta: FC<Props> = ({ metaSocial, strapiUrl, fallbackImage }) => {
     const { title, description, image } = metaSocial;
+
+    const selectedImageAttributes = image?.data?.attributes ?? fallbackImage?.attributes;
 
     return (
         <>
@@ -17,18 +16,18 @@ const FacebookMeta: FC<Props> = ({ metaSocial, strapiUrl }) => {
                 {title && <meta name="og:title" content={title} />}
                 {description && <meta name="og:description" content={description} />}
             </Head>
-            {image?.data && (
+            {selectedImageAttributes && (
                 <Head>
-                    <meta name="og:image" content={getStrapiUrl(strapiUrl, image.data.attributes.url)} />
+                    <meta name="og:image" content={getStrapiUrl(strapiUrl, selectedImageAttributes.url)} />
                     {/* TODO: We should know if the image width and height are known since the media is an image */}
-                    {image.data.attributes.width !== null && (
-                        <meta name="og:image:width" content={image.data.attributes.width.toString()} />
+                    {selectedImageAttributes.width !== null && (
+                        <meta name="og:image:width" content={selectedImageAttributes.width.toString()} />
                     )}
-                    {image.data.attributes.height !== null && (
-                        <meta name="og:image:height" content={image.data.attributes.height.toString()} />
+                    {selectedImageAttributes.height !== null && (
+                        <meta name="og:image:height" content={selectedImageAttributes.height.toString()} />
                     )}
-                    {image.data.attributes.alternativeText && (
-                        <meta name="og:image:alt" content={image.data.attributes.alternativeText} />
+                    {selectedImageAttributes.alternativeText && (
+                        <meta name="og:image:alt" content={selectedImageAttributes.alternativeText} />
                     )}
                 </Head>
             )}

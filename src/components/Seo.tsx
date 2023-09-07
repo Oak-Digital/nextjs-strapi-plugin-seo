@@ -1,10 +1,9 @@
 import Head from 'next/head';
 import { FC } from 'react';
-import { getStrapiUrl } from '../lib/url';
 import StructuredData from './StructuredData';
-import MetaSocial from './meta-social/MetaSocial';
 import { FALLBACK_URL } from '../lib/constants';
-import { SeoProps } from '../types/Props';
+import { SeoProps } from '../types';
+import MetaSocials from './meta-social/MetaSocials';
 
 const Seo: FC<SeoProps> = ({ seo, strapiUrl = FALLBACK_URL }) => {
     const meta: { name: string; content: string }[] = [];
@@ -13,10 +12,6 @@ const Seo: FC<SeoProps> = ({ seo, strapiUrl = FALLBACK_URL }) => {
 
     if (seo.metaTitle) addMeta('title', seo.metaTitle);
     if (seo.metaDescription) addMeta('description', seo.metaDescription);
-    if (seo?.metaImage?.data?.attributes.url) {
-        const fullUrl = getStrapiUrl(strapiUrl, seo.metaImage.data.attributes.url);
-        addMeta('image', fullUrl);
-    }
     if (seo.keywords) addMeta('keywords', seo.keywords);
     if (seo.metaRobots) addMeta('robots', seo.metaRobots);
 
@@ -29,9 +24,7 @@ const Seo: FC<SeoProps> = ({ seo, strapiUrl = FALLBACK_URL }) => {
                     </Head>
                 );
             })}
-            {seo.metaSocial?.map((social) => (
-                <MetaSocial key={social.id} metaSocial={social} />
-            ))}
+            <MetaSocials metaSocials={seo.metaSocial} strapiUrl={strapiUrl} fallbackImage={seo.metaImage?.data ?? undefined} />
             {seo.canonicalURL && (
                 <Head>
                     <link rel="canonical" href={seo.canonicalURL} />
