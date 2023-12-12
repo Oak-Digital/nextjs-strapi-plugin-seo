@@ -23,7 +23,7 @@
         "coverage": "vitest run --coverage"
     },
     "peerDependencies": {
-        "next": ">= 12 <= 13"
+        "next": ">= 12 <= 14"
     },
     "devDependencies": {
         "@oak-digital/types-4-strapi-2": "^0.5.4",
