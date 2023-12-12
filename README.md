@@ -65,7 +65,5 @@ For testing purposes, there has been added an [`/example`](./example/) directory
 
 ## Publishing
 
-```bash
-pnpm build
-pnpm publish
-```
+Publishing will happen automatically with github actions.
+Just run `pnpm run release`
