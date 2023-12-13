@@ -24,7 +24,11 @@ const Seo: FC<SeoProps> = ({ seo, strapiUrl = FALLBACK_URL }) => {
                     </Head>
                 );
             })}
-            <MetaSocials metaSocials={seo.metaSocial} strapiUrl={strapiUrl} fallbackImage={seo.metaImage?.data ?? undefined} />
+            <MetaSocials
+                metaSocials={seo.metaSocial}
+                strapiUrl={strapiUrl}
+                fallbackImage={seo.metaImage?.data ?? undefined}
+            />
             {seo.canonicalURL && (
                 <Head>
                     <link rel="canonical" href={seo.canonicalURL} />

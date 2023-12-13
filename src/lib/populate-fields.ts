@@ -1,4 +1,4 @@
-import { subfields } from "./subfields";
+import { subfields } from './subfields';
 
 export const seoPopulateFields = ['metaImage', 'metaSocial'] as const;
 export const metaSocialPopulateFields = ['image'] as const;

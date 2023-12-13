@@ -1,5 +1,8 @@
 node_modules/
 dist/
+example/
+lib/
+src/lib/strapi-src/
 .prettierrc
 pnpm-lock.yaml
 package-lock.json

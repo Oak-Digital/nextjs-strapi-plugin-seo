@@ -23,19 +23,19 @@ yarn add @oak-digital/nextjs-strapi-plugin-seo
 In a `page.tsx` file you should use `generateMetadata` where you fetch the entry from strapi with the seo field populated. And then you can create the metadata with the `getMetadataFromSeo` function.
 
 ```tsx
-import { getMetadataFromSeo } from '@oak-digital/nextjs-strapi-plugin-seo'
+import { getMetadataFromSeo } from '@oak-digital/nextjs-strapi-plugin-seo';
 
-export async const generateMetadata = (props) => {
+export const generateMetadata = (props) => {
     // This should be your fetcher
     const page = await fetchPageWithSeo();
 
-    const seoMetadata = getMetadataFromSeo({ seo: page.attributes.seo })
+    const seoMetadata = getMetadataFromSeo({ seo: page.attributes.seo });
 
     return {
-        ...seoMetadata
+        ...seoMetadata,
         // Here you can add any other fields that you may want on the meta data
-    }
-}
+    };
+};
 ```
 
 ### Usage - Pages router
@@ -44,7 +44,7 @@ On your page that fetches the seo component you can simply import the `Seo` comp
 NOTE: It should not be wrapped in a [`next/head`](https://nextjs.org/docs/api-reference/next/head) component, this is done internally.
 
 ```tsx
-import { Seo, SeoProps } from '@oak-digital/nextjs-strapi-plugin-seo'
+import { Seo, SeoProps } from '@oak-digital/nextjs-strapi-plugin-seo';
 
 type Props = {
     seo: SeoProps['seo'];
@@ -57,7 +57,7 @@ const MyPage: NextPage<Props> = ({ seo }) => {
             <Seo seo={seo} strapiUrl={'https://your-strapi-url.example:1337'} />
         </main>
     );
-}
+};
 ```
 
 ### Fetching
@@ -73,10 +73,10 @@ This example assumes that your seo component's name is seo from the content type
 const query = qs.stringify({
     populate: {
         seo: {
-            populate: seoDeepPopulateFields
-        }
-    }
-})
+            populate: seoDeepPopulateFields,
+        },
+    },
+});
 ```
 
 ## Testing locally
