@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { FC } from 'react';
-import { getStrapiUrl } from '../../lib/url';
+import { getImageUrl } from '../../lib/url';
 import { MetaSocialProps } from '../../types';
 
 type Props = MetaSocialProps;
@@ -12,7 +12,9 @@ const TwitterMeta: FC<Props> = ({ strapiUrl, metaSocial, fallbackImage }) => {
     return (
         <Head>
             {title && <meta name="twitter:title" content={title} />}
-            {selectedImageAttributes?.url && <meta name="twitter:image" content={getStrapiUrl(strapiUrl, selectedImageAttributes.url)} />}
+            {selectedImageAttributes?.url && (
+                <meta name="twitter:image" content={getImageUrl(selectedImageAttributes.url, strapiUrl)} />
+            )}
             {description && <meta name="twitter:description" content={description} />}
         </Head>
     );

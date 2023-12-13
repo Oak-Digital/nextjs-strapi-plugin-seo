@@ -5,3 +5,11 @@ export const getStrapiUrl = (strapiUrl: string, path: string) => {
     const newPath = path.replace(/^\/+/, '');
     return `${url}/${newPath}`;
 };
+
+export const getImageUrl = (imageUrl: string, strapiUrl: string) => {
+    if (imageUrl.startsWith('/')) {
+        return getStrapiUrl(strapiUrl, imageUrl);
+    }
+
+    return imageUrl;
+};
