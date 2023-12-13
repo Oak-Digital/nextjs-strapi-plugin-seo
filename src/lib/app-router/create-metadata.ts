@@ -81,11 +81,7 @@ export const getMetadataFromMetaSocials = (
 /**
  * Creates a metadata object from a strapi seo object
  */
-export const getMetadataFromSeo = ({
-    seo,
-    strapiUrl = FALLBACK_URL,
-    otherMeta = {},
-}: SeoProps & { otherMeta: Metadata }): Metadata => {
+export const getMetadataFromSeo = ({ seo, strapiUrl = FALLBACK_URL }: SeoProps): Metadata => {
     const { metaTitle, metaDescription, metaImage, keywords, metaSocial } = seo;
 
     const other: { title?: string } = {};
@@ -99,6 +95,5 @@ export const getMetadataFromSeo = ({
         keywords,
         description: metaDescription,
         other,
-        ...otherMeta,
     };
 };
