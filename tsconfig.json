@@ -12,8 +12,15 @@
         "noImplicitReturns": true,
         "forceConsistentCasingInFileNames": true,
         "jsx": "react-jsx",
-        "types": ["vite/client"]
+        "types": [
+            // "vite/client"
+        ]
     },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules"]
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "lib"
+    ]
 }

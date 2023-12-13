@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { FC } from 'react';
-import { getImageUrl } from '../../lib/url';
+import { getImageUrlFallback } from '../../lib/url';
 import { MetaSocialProps } from '../../types';
 
 type Props = MetaSocialProps;
@@ -18,7 +18,7 @@ const FacebookMeta: FC<Props> = ({ metaSocial, strapiUrl, fallbackImage }) => {
             </Head>
             {selectedImageAttributes && (
                 <Head>
-                    <meta name="og:image" content={getImageUrl(selectedImageAttributes.url, strapiUrl)} />
+                    <meta name="og:image" content={getImageUrlFallback(selectedImageAttributes.url, strapiUrl)} />
                     {/* TODO: We should know if the image width and height are known since the media is an image */}
                     {selectedImageAttributes.width !== null && (
                         <meta name="og:image:width" content={selectedImageAttributes.width.toString()} />

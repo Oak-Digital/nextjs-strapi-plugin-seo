@@ -1,4 +1,9 @@
-export const getStrapiUrl = (strapiUrl: string, path: string) => {
+import { IMedia } from '../types/generated';
+
+/**
+ * Concatenates the strapiUrl and the path with only a single slash in between
+ */
+export const createStrapiUrl = (strapiUrl: string, path: string) => {
     // remove trailing slash
     const url = strapiUrl.replace(/\/+$/, '');
     // remove leading slash from path
@@ -6,10 +11,18 @@ export const getStrapiUrl = (strapiUrl: string, path: string) => {
     return `${url}/${newPath}`;
 };
 
-export const getImageUrl = (imageUrl: string, strapiUrl: string) => {
+/**
+ * Returns the image url unless it starts with a slash
+ * Then it will prepend the strapiUrl
+ */
+export const getImageUrlFallback = (imageUrl: string, strapiUrl: string) => {
     if (imageUrl.startsWith('/')) {
-        return getStrapiUrl(strapiUrl, imageUrl);
+        return createStrapiUrl(strapiUrl, imageUrl);
     }
 
     return imageUrl;
+};
+
+export const getMediaUrl = (media: IMedia, strapiUrl: string) => {
+    return getImageUrlFallback(media?.attributes?.url ?? '', strapiUrl);
 };

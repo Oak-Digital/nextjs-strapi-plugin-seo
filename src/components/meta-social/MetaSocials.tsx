@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, useMemo } from 'react';
 import { FALLBACK_URL, NETWORK_NAMES } from '../../lib/constants';
 import { IMedia, ISharedMetaSocial } from '../../types/generated';
@@ -18,16 +20,17 @@ const MetaSocials: FC<Props> = ({ metaSocials = [], strapiUrl = FALLBACK_URL, fa
 
     return (
         <>
-            {fallbackImage && networksToUseFallbackFor.map((network) => (
-                <MetaSocial
-                    key={network}
-                    metaSocial={{
-                        socialNetwork: network,
-                    }}
-                    fallbackImage={fallbackImage}
-                    strapiUrl={strapiUrl}
-                />
-            ))}
+            {fallbackImage &&
+                networksToUseFallbackFor.map((network) => (
+                    <MetaSocial
+                        key={network}
+                        metaSocial={{
+                            socialNetwork: network,
+                        }}
+                        fallbackImage={fallbackImage}
+                        strapiUrl={strapiUrl}
+                    />
+                ))}
             {metaSocials.map((metaSocial) => (
                 <MetaSocial
                     key={metaSocial.id}
