@@ -1,8 +1,12 @@
 import { IMedia, ISharedMetaSocial, ISharedSeo } from './generated';
 
 export type SeoProps = {
-    seo: ISharedSeo;
-    strapiUrl?: string; // should not include /api
+    seo: Partial<ISharedSeo>;
+    /**
+     * The url to the strapi instace, should not include /api
+     * @example http://localhost:1337
+     */
+    strapiUrl?: string;
 };
 
 type RequiredKeys = 'socialNetwork';

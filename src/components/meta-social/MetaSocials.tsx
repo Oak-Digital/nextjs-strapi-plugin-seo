@@ -4,9 +4,10 @@ import { FC, useMemo } from 'react';
 import { FALLBACK_URL, NETWORK_NAMES } from '../../lib/constants';
 import { IMedia, ISharedMetaSocial } from '../../types/generated';
 import MetaSocial from './MetaSocial';
+import { MetaSocialProps } from '../../types';
 
 type Props = {
-    metaSocials?: ISharedMetaSocial[];
+    metaSocials?: MetaSocialProps['metaSocial'][];
     strapiUrl?: string;
     fallbackImage?: IMedia;
 };

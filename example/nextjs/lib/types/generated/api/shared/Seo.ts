@@ -1,8 +1,8 @@
-import { IMedia } from "../builtins/Media";
+import { IMedia } from "../../builtins/Media";
 import { ISharedMetaSocial } from "./MetaSocial";
-import { ExtractNested } from "../builtins/ExtractNested";
-import { ExtractFlat } from "../builtins/ExtractFlat";
-import { RequiredBy } from "../builtins/RequiredBy";
+import { ExtractNested } from "../../builtins/ExtractNested";
+import { ExtractFlat } from "../../builtins/ExtractFlat";
+import { RequiredBy } from "../../builtins/RequiredBy";
 export type ISharedSeo<Populate extends string | never = never> = RequiredBy<
   {
     id: number;
@@ -10,7 +10,7 @@ export type ISharedSeo<Populate extends string | never = never> = RequiredBy<
     metaTitle: string | null;
     metaDescription: string | null;
     metaImage?: { data: IMedia | null };
-    metaSocial?: ISharedMetaSocial[] | null;
+    metaSocial?: ISharedMetaSocial<ExtractNested<Populate, "metaSocial">>[];
     keywords: string | null;
     metaRobots: string | null;
     structuredData: any;

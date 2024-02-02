@@ -15,7 +15,7 @@
         "build:cjs": "tsc -p tsconfig.build.json",
         "build:esm": "tsc -p tsconfig.build.esm.json",
         "release": "bumpp",
-        "types": "t4s --in ./src/lib/strapi-src --out ./src/types/generated --prettier ./.prettierrc -D",
+        "types": "t4s --in ./example/strapi/ --out ./src/types/generated --prettier ./.prettierrc -D -r load-strapi",
         "preview": "vite preview",
         "lint": "eslint .",
         "format": "prettier -w .",
@@ -28,7 +28,7 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@oak-digital/types-4-strapi-2": "^0.5.4",
+        "@oak-digital/types-4-strapi-2": "^1.0.3",
         "@types/react": "^18.2.45",
         "@types/react-dom": "^18.2.17",
         "@typescript-eslint/eslint-plugin": "^5.49.0",
