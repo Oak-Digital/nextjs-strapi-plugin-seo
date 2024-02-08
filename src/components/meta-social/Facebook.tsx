@@ -13,21 +13,21 @@ const FacebookMeta: FC<Props> = ({ metaSocial, strapiUrl, fallbackImage }) => {
     return (
         <>
             <Head>
-                {title && <meta name="og:title" content={title} />}
-                {description && <meta name="og:description" content={description} />}
+                {title && <meta property="og:title" content={title} />}
+                {description && <meta property="og:description" content={description} />}
             </Head>
             {selectedImageAttributes && (
                 <Head>
-                    <meta name="og:image" content={getImageUrlFallback(selectedImageAttributes.url, strapiUrl)} />
+                    <meta property="og:image" content={getImageUrlFallback(selectedImageAttributes.url, strapiUrl)} />
                     {/* TODO: We should know if the image width and height are known since the media is an image */}
                     {selectedImageAttributes.width !== null && (
-                        <meta name="og:image:width" content={selectedImageAttributes.width.toString()} />
+                        <meta property="og:image:width" content={selectedImageAttributes.width.toString()} />
                     )}
                     {selectedImageAttributes.height !== null && (
-                        <meta name="og:image:height" content={selectedImageAttributes.height.toString()} />
+                        <meta property="og:image:height" content={selectedImageAttributes.height.toString()} />
                     )}
                     {selectedImageAttributes.alternativeText && (
-                        <meta name="og:image:alt" content={selectedImageAttributes.alternativeText} />
+                        <meta property="og:image:alt" content={selectedImageAttributes.alternativeText} />
                     )}
                 </Head>
             )}

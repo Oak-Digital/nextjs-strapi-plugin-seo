@@ -11,11 +11,11 @@ const TwitterMeta: FC<Props> = ({ strapiUrl, metaSocial, fallbackImage }) => {
 
     return (
         <Head>
-            {title && <meta name="twitter:title" content={title} />}
+            {title && <meta property="twitter:title" name="twitter:title" content={title} />}
             {selectedImageAttributes?.url && (
-                <meta name="twitter:image" content={getImageUrlFallback(selectedImageAttributes.url, strapiUrl)} />
+                <meta property="twitter:image" name="twitter:image" content={getImageUrlFallback(selectedImageAttributes.url, strapiUrl)} />
             )}
-            {description && <meta name="twitter:description" content={description} />}
+            {description && <meta property="twitter:description" name="twitter:description" content={description} />}
         </Head>
     );
 };
